@@ -24,8 +24,11 @@ import { Component } from '@angular/core';
         >Save</button>
     </div>
     <div class="form-group">
-        <input class="form-control" (keyUp.enter)="onEnter()" />
+        <input class="form-control" (keyUp.enter)="onEnter1($event)" />
     </div>
+    <div class="form-group">
+    <input class="form-control" #email (keyUp.enter)="onEnter2(email.value)" />
+</div>
     `
 })
 export class CoursesComponent {
@@ -49,7 +52,11 @@ export class CoursesComponent {
         console.log("Save button clicked", $event);
     }
 
-    onEnter() {
-        console.log("Enter pressed");
+    onEnter1($event) {
+        console.log("input value:", $event.target.value);
+    }
+
+    onEnter2(email) {
+        console.log("input value:", email);
     }
 }
