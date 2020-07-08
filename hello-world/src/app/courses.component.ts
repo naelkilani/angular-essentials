@@ -11,12 +11,21 @@ import { Component } from '@angular/core';
         {{ course }}
         </li>
     </ul>
-    <button class="btn btn-primary">Save</button>
+    <img [src]="imageSrc" />
+    <table>
+        <td>
+            <tr [attr.colspan]="4"></tr>
+        </td>
+    </table>
+    <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'">Save</button>
     `
 })
 export class CoursesComponent {
     title = "List of courses"
     courses: string[];
+    imageSrc = "https://picsum.photos/200/300";
+    isActive = false;
+    colSpan = 4;
 
     constructor(coursesService: CoursesService) {
         this.courses = coursesService.getCourses();
