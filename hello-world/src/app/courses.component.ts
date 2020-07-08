@@ -17,11 +17,16 @@ import { Component } from '@angular/core';
             <tr [attr.colspan]="4"></tr>
         </td>
     </table>
-    <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'">Save</button>
+    <div (click)="onDivClicked()">
+        <button class="btn btn-primary"
+            [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'"
+            (click)=[onSave($event)]
+        >Save</button>
+    </div>
     `
 })
 export class CoursesComponent {
-    title = "List of courses"
+    title = "List of courses";
     courses: string[];
     imageSrc = "https://picsum.photos/200/300";
     isActive = false;
@@ -29,5 +34,15 @@ export class CoursesComponent {
 
     constructor(coursesService: CoursesService) {
         this.courses = coursesService.getCourses();
+    }
+
+    onDivClicked() {
+        console.log("on Div clicked");
+    }
+
+    onSave($event) {
+        $event.stopPropagation();
+
+        console.log("Save button clicked", $event);
     }
 }
