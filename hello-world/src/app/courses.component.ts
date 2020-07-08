@@ -23,12 +23,9 @@ import { Component } from '@angular/core';
             (click)=[onSave($event)]
         >Save</button>
     </div>
-    <div class="form-group">
-        <input class="form-control" (keyUp.enter)="onEnter1($event)" />
-    </div>
-    <div class="form-group">
-    <input class="form-control" #email (keyUp.enter)="onEnter2(email.value)" />
-</div>
+    <input (keyUp.enter)="onEnter1($event)" />
+    <input #email (keyUp.enter)="onEnter2(email.value)" />
+    <input [(ngModel)]="name" (keyUp.enter)="onEnter3()" />  
     `
 })
 export class CoursesComponent {
@@ -37,6 +34,7 @@ export class CoursesComponent {
     imageSrc = "https://picsum.photos/200/300";
     isActive = false;
     colSpan = 4;
+    name = "default value";
 
     constructor(coursesService: CoursesService) {
         this.courses = coursesService.getCourses();
@@ -58,5 +56,9 @@ export class CoursesComponent {
 
     onEnter2(email) {
         console.log("input value:", email);
+    }
+
+    onEnter3() {
+        console.log("email value:", this.name);
     }
 }
