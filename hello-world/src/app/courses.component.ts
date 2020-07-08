@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses',
     template: `
-    <h2>{{ title }}</h2>
+    <h2>{{ title | summary:30 }}</h2>
     <ul>
         <li *ngFor="let course of courses">
         {{ course }}
@@ -30,11 +30,11 @@ import { Component } from '@angular/core';
     {{ course.students | number }} <br/>
     {{ course.rating | number:'2.1-1' }} <br/>
     {{ course.price | currency:'USD':true:'3.2-2' }} <br/>
-    {{ course.releaseDate | date:'shortDate' }}
+    {{ course.releaseDate | date:'shortDate' }} 
     `
 })
 export class CoursesComponent {
-    title = "List of courses";
+    title = "List of courseIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.";
     courses: string[];
     imageSrc = "https://picsum.photos/200/300";
     isActive = false;
