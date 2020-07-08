@@ -23,6 +23,9 @@ import { Component } from '@angular/core';
             (click)=[onSave($event)]
         >Save</button>
     </div>
+    <div class="form-group">
+        <input class="form-control" (keyUp.enter)="onEnter()" />
+    </div>
     `
 })
 export class CoursesComponent {
@@ -44,5 +47,9 @@ export class CoursesComponent {
         $event.stopPropagation();
 
         console.log("Save button clicked", $event);
+    }
+
+    onEnter() {
+        console.log("Enter pressed");
     }
 }
