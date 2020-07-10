@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { BookmarkComponent } from './bookmark/bookmark.component';
+import { TitleCasePipe } from './title-case.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BookmarkComponent } from './bookmark/bookmark.component';
     CoursesComponent,
     CourseComponent,
     SummaryPipe,
-    BookmarkComponent
+    BookmarkComponent,
+    TitleCasePipe
   ],
   imports: [
     BrowserModule,
