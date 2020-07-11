@@ -12,7 +12,7 @@ export interface FavouriteChangeEventArgs {
 })
 export class BookmarkComponent implements OnInit {
   @Input('isFavourite') isFavourite: boolean;
-  @Output() change = new EventEmitter();
+  @Output('change') change = new EventEmitter();
 
   constructor() { }
 

@@ -18,3 +18,4 @@ export class AppComponent {
     console.log('Favourite Changed.', eventArgs.newValue)
   }
 }
+ 
