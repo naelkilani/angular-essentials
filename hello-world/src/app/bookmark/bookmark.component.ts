@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   //inputs: ['isFavourite'] 
 })
 export class BookmarkComponent implements OnInit {
-  @Input() isFavourite: boolean;
+  @Input('isFavourite') isFavourite: boolean;
 
   constructor() { }
 
