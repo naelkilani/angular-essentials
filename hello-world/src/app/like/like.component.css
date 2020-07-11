@@ -3,5 +3,11 @@ span {
 }
 
 .fa-heart {
+    color: #ccc;
+    cursor: pointer;
     margin-right: 10px;
+}
+
+.highlighted {
+    color: deeppink;
 }

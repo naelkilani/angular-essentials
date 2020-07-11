@@ -12,22 +12,13 @@ export interface LikeChangeEventArgs {
 })
 export class LikeComponent {
   @Input('likesCount') likesCount = 0;
-  @Input('isActive') isLiked: boolean;
+  @Input('isActive') isActive: boolean;
   @Output('change') change = new EventEmitter();
-  cursor = "default";
-
-  onMouseHover() {
-    this.cursor = "pointer";
-  }
-
-  onMouseLeave() {
-    this.cursor = "default";
-  }
 
   onClick() {
-    this.isLiked = !this.isLiked;
-    this.likesCount += (this.isLiked) ? 1 : -1;
+    this.isActive = !this.isActive;
+    this.likesCount += (this.isActive) ? 1 : -1;
 
-    this.change.emit({ isLiked: this.isLiked });
+    this.change.emit({ isLiked: this.isActive });
   }
 }

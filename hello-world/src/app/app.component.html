@@ -10,4 +10,5 @@
 </bootstrap-panel> -->
 
 <like [likesCount]="post.likesCount"
-      [isActive]="post.isLiked"></like>
+      [isActive]="post.isLiked"
+      (change)="onLikeChange($event)"></like>
