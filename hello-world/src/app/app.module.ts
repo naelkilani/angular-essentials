@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { BookmarkComponent } from './bookmark/bookmark.component';
 import { TitleCasePipe } from './title-case.pipe';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TitleCasePipe } from './title-case.pipe';
     CourseComponent,
     SummaryPipe,
     BookmarkComponent,
-    TitleCasePipe
+    TitleCasePipe,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
