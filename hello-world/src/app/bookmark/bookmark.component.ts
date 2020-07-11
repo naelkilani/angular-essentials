@@ -7,17 +7,19 @@ export interface FavouriteChangeEventArgs {
 @Component({
   selector: 'bookmark',
   templateUrl: './bookmark.component.html',
-  styleUrls: ['./bookmark.component.css']
+  styleUrls: ['./bookmark.component.css'],
+  styles: [
+    `
+      .fa {
+        color: red;
+      }
+    `
+  ]
   //inputs: ['isFavourite'] 
 })
-export class BookmarkComponent implements OnInit {
+export class BookmarkComponent {
   @Input('isFavourite') isFavourite: boolean;
   @Output('change') change = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
  
   onClick() {
     this.isFavourite = !this.isFavourite;
