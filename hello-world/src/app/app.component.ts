@@ -2,6 +2,11 @@ import { LikeChangeEventArgs } from './like/like.component';
 import { FavouriteChangeEventArgs } from './bookmark/bookmark.component';
 import { Component } from '@angular/core';
 
+enum ViewMode {
+  Map = 1,
+  List = 2
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,6 +21,8 @@ export class AppComponent {
   };
 
   title = 'hello-world';
+  ViewMode = ViewMode;
+  viewMode = ViewMode.Map;
 
   onFavouriteChange(eventArgs: FavouriteChangeEventArgs) {
     console.log('Favourite Changed.', eventArgs.newValue);

@@ -9,6 +9,23 @@
     </ng-container>
 </bootstrap-panel> -->
 
-<like [likesCount]="post.likesCount"
+<!-- <like [likesCount]="post.likesCount"
       [isActive]="post.isLiked"
-      (change)="onLikeChange($event)"></like>
+      (change)="onLikeChange($event)"></like> -->
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="viewMode == ViewMode.Map"
+         (click)="viewMode = ViewMode.Map">Map View</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="viewMode == ViewMode.List" 
+         (click)="viewMode = ViewMode.List">List View</a>
+    </li>
+  </ul>
+
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="ViewMode.Map">Map View Content</div>
+    <div *ngSwitchCase="ViewMode.List">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
