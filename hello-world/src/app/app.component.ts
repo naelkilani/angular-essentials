@@ -10,6 +10,10 @@ export class AppComponent {
     title: "Title",
     isFavourite: true
   };
-  
+
   title = 'hello-world';
+
+  onFavouriteChange() {
+    console.log('Favourite Changed.')
+  }
 }
