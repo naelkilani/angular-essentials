@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'bookmark',
   templateUrl: './bookmark.component.html',
   styleUrls: ['./bookmark.component.css']
+  //inputs: ['isFavourite'] 
 })
 export class BookmarkComponent implements OnInit {
-  isFavourite: boolean;
+  @Input() isFavourite: boolean;
 
   constructor() { }
 
