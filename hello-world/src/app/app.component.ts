@@ -1,3 +1,4 @@
+import { LikeChangeEventArgs } from './like/like.component';
 import { FavouriteChangeEventArgs } from './bookmark/bookmark.component';
 import { Component } from '@angular/core';
 
@@ -9,13 +10,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   post = {
     title: "Title",
-    isFavourite: true
+    isFavourite: true,
+    isLiked: true,
+    likesCount: 10
   };
 
   title = 'hello-world';
 
   onFavouriteChange(eventArgs: FavouriteChangeEventArgs) {
-    console.log('Favourite Changed.', eventArgs.newValue)
+    console.log('Favourite Changed.', eventArgs.newValue);
+  }
+
+  onLikeChange(eventArgs: LikeChangeEventArgs) {
+    console.log('Like Changed.', eventArgs.isLiked)
   }
 }
  

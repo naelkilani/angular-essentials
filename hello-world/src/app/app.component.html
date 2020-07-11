@@ -1,11 +1,13 @@
 <!-- <courses></courses> -->
 <!-- <bookmark [isFavourite]="post.isFavourite" (change)="onFavouriteChange($event)"></bookmark> -->
 <!-- <course></course> -->
-<bootstrap-panel>
+<!-- <bootstrap-panel>
     <ng-container class="header">Heading</ng-container>
     <ng-container class="body">
         <h2>Body</h2>
         <p>Some content...</p>
     </ng-container>
-</bootstrap-panel>
+</bootstrap-panel> -->
 
+<like [likesCount]="post.likesCount"
+      [isActive]="post.isLiked"></like>

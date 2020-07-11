@@ -1,0 +1,9 @@
+<span 
+   class="fa fa-heart"
+   (mouseenter)="onMouseHover()"
+   (mouseleave)="onMouseLeave()"
+   (click)="onClick()"
+   [style.color]="!isLiked ? '#ccc' : 'deeppink'"
+   [style.cursor]="cursor"
+></span>
+<span>{{ likesCount }}</span>
