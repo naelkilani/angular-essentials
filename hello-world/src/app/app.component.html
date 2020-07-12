@@ -13,7 +13,7 @@
       [isActive]="post.isLiked"
       (change)="onLikeChange($event)"></like> -->
 
-<ul class="nav nav-pills">
+<!-- <ul class="nav nav-pills">
     <li class="nav-item">
       <a class="nav-link" [class.active]="viewMode == ViewMode.Map"
          (click)="viewMode = ViewMode.Map">Map View</a>
@@ -28,4 +28,17 @@
     <div *ngSwitchCase="ViewMode.Map">Map View Content</div>
     <div *ngSwitchCase="ViewMode.List">List View Content</div>
     <div *ngSwitchDefault>Otherwise</div>
-</div>
+</div> -->
+
+<button type="button" class="btn btn-primary" (click)="loadCourses()">
+  Load
+</button>
+
+<ul>
+  <li *ngFor="let course of courses; index as i; trackBy: trackCourse">
+    {{ course.name }}
+    <button type="button" class="btn btn-primary" (click)="onRemove(course.id)">
+      Remove
+    </button>
+  </li>
+</ul>
