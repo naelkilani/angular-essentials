@@ -4,8 +4,9 @@
 
 <span 
    class="fa"
-   [class.fa-bookmark]="isFavourite"
-   [class.fa-bookmark-o]="!isFavourite"
+   [ngClass]="{
+       'fa-bookmark': isFavourite,
+       'fa-bookmark-o': !isFavourite
+   }"
    (click)="onClick()"
 ></span>
-
