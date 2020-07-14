@@ -7,6 +7,11 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent {
+  contactMethods = [
+    { id: 1, name: "email"},
+    { id: 2, name: "phone"}
+  ];
+
   onSubmit(f: NgForm) {
     console.log(f);
   }

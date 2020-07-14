@@ -18,7 +18,15 @@
             <input type="checkbox" ngModel name="Subscribed"> Subscribe to mailing list?
         </label>
     </div>
+    <div class="form-group">
+        <label for="contactMethod">Contact Method</label>
+        <select multiple ngModel name="contactMethod" class="form-control" id="contactMethod">
+            <option value=""></option>
+            <option *ngFor="let method of contactMethods" [value]="method.id">{{ method.name }}</option>
+        </select>
+    </div>
     <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+    {{ f.value | json }}
 </form>
 
 <!-- f.value = {
