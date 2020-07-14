@@ -25,6 +25,12 @@
             <option *ngFor="let method of contactMethods" [value]="method.id">{{ method.name }}</option>
         </select>
     </div>
+    <div *ngFor="let gender of genders" class="radio">
+        <label>
+            <input ngModel name="gender" [value]="gender.id" type="radio">
+            {{ gender.name }}
+        </label>
+    </div>
     <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
     {{ f.value | json }}
 </form>

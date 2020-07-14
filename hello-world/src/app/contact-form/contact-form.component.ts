@@ -12,6 +12,11 @@ export class ContactFormComponent {
     { id: 2, name: "phone"}
   ];
 
+  genders = [
+    { id: 1, name: 'Male'},
+    { id: 2, name: 'Female' }
+  ]
+
   onSubmit(f: NgForm) {
     console.log(f);
   }
