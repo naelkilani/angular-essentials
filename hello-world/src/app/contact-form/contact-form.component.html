@@ -1,6 +1,7 @@
 <div class="form-group">
     <label for="firstName">First Name</label>
-    <input class="form-control" type="text" id="firstName">
+    <input required ngModel name="firstName" #firstName="ngModel" class="form-control" type="text" id="firstName">
+    <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">First Name is Required.</div>
 </div>
 <div class="form-group">
     <label for="Comment">Comment</label>
