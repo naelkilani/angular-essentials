@@ -1,1 +1,3 @@
-<p>github-followers works!</p>
+<div *ngFor="let follower of followers">
+    <a [routerLink]="['/followers', follower.id]">{{ follower.name }}</a>
+</div>

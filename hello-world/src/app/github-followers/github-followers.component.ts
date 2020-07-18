@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './github-followers.component.html',
   styleUrls: ['./github-followers.component.css']
 })
-export class GithubFollowersComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class GithubFollowersComponent{
+  followers = [
+    { id: 1, name: "Ahmad" },
+    { id: 2, name: "Ali"}
+  ];
 }
