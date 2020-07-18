@@ -1,8 +1,10 @@
+import { PostsComponent } from './posts/posts.component';
+import { RouterModule, Routes } from '@angular/router';
 import { SummaryPipe } from './summary.pipe';
 import { CoursesService } from './courses.service';
 import { CoursesComponent } from './courses.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +22,35 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+
+const routes: Routes = [
+  {
+    path: "",
+    redirectTo: "/home",
+    pathMatch: "full"
+  },
+  {
+    path: "home",
+    component: HomeComponent
+  },
+  {
+    path: "followers/:id",
+    component: GithubProfileComponent
+  },
+  {
+    path: "followers",
+    component: GithubFollowersComponent
+  },
+  {
+    path: "posts",
+    component: PostsComponent
+  },
+  {
+    path: "**",
+    component: NotFoundComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -38,12 +69,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavbarComponent,
     HomeComponent,
     GithubProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    GithubFollowersComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
   ],
