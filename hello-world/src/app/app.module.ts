@@ -35,7 +35,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "followers/:id",
+    path: "followers/:id/:name",
     component: GithubProfileComponent
   },
   {
