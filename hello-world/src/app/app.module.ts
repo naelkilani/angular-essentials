@@ -16,6 +16,10 @@ import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { CourseFormComponent } from './course-form/course-form.component';
     InputFormatDirective,
     ZippyComponent,
     ContactFormComponent,
-    CourseFormComponent
+    CourseFormComponent,
+    NavbarComponent,
+    HomeComponent,
+    GithubProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
